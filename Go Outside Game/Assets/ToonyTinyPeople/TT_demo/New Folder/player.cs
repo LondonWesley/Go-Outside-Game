@@ -23,7 +23,7 @@ public class player : MonoBehaviour
         {
             Speed = 20;
             stamina -= 0.3;
-            // ]Debug.Log(stamina);
+            //Debug.Log(stamina);
 
         } else {
             Speed = 5;

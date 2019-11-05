@@ -10,6 +10,8 @@ public class RandomTasks : MonoBehaviour
     public float spawnWait;         //These three variables are the time between each spawn (Range between leastWait to MostWait)
     public float spawnMostWait;
     public float spawnLeastWait;
+    public GameObject phone;
+
     public int startWait;           
     public int taskTime;            //Length of time that the task will stay
 
@@ -23,10 +25,7 @@ public class RandomTasks : MonoBehaviour
     void Update()
     {
         spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
-        foreach(Touch touch in Input.touches)
-        {
-            temp.SetActive(false);
-        }
+        
     }
 
     IEnumerator waitTask()
@@ -35,12 +34,15 @@ public class RandomTasks : MonoBehaviour
         while (taskCounter < Tasks.Length) {
             yield return new WaitForSeconds(startWait);
             randTask = Random.Range(0, Tasks.Length);
-
+            PhoneScript phonescript = phone.GetComponent<PhoneScript>();
+            phonescript.addTask(taskTime);
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, Random.Range(-spawnValues.z, spawnValues.z));
             temp = Instantiate(Tasks[randTask], spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
             temp.SetActive(true);
+           
             yield return new WaitForSeconds(taskTime);
             temp.SetActive(false);
+            phonescript.removeTask(2);
             yield return new WaitForSeconds(spawnWait);
             taskCounter++;
         }
