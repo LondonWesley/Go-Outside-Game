@@ -23,6 +23,10 @@ public class RandomTasks : MonoBehaviour
     void Update()
     {
         spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
+        foreach(Touch touch in Input.touches)
+        {
+            temp.SetActive(false);
+        }
     }
 
     IEnumerator waitTask()
@@ -38,6 +42,7 @@ public class RandomTasks : MonoBehaviour
             yield return new WaitForSeconds(taskTime);
             temp.SetActive(false);
             yield return new WaitForSeconds(spawnWait);
+            taskCounter++;
         }
     }
 
