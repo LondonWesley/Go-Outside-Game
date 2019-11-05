@@ -338,12 +338,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tasks:
   - {fileID: 6129470743710058477, guid: 0a269fa4f244e1e4a8be5cc509413ced, type: 3}
-  spawnValues: {x: 10, y: 0, z: 0}
+  - {fileID: 6129470743710058477, guid: 0a269fa4f244e1e4a8be5cc509413ced, type: 3}
+  - {fileID: 6129470743710058477, guid: 0a269fa4f244e1e4a8be5cc509413ced, type: 3}
+  - {fileID: 6129470743710058477, guid: 0a269fa4f244e1e4a8be5cc509413ced, type: 3}
+  - {fileID: 6129470743710058477, guid: 0a269fa4f244e1e4a8be5cc509413ced, type: 3}
+  temp: {fileID: 0}
+  spawnValues: {x: 10, y: 0, z: 10}
   spawnWait: 0
-  spawnMostWait: 4
+  spawnMostWait: 2
   spawnLeastWait: 0.5
   startWait: 1
-  stop: 0
+  taskTime: 10
 --- !u!4 &674547370
 Transform:
   m_ObjectHideFlags: 0
