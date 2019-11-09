@@ -119,7 +119,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b632f1458c80864449b814eb46f7ad4d, type: 2}
 --- !u!1 &16963644
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60512369}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.062, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1527320492}
@@ -1692,6 +1692,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289321546}
   m_CullTransparentMesh: 0
+--- !u!4 &357246450 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 439102, guid: 907fd825e3988774caab4234b943bf44,
+    type: 3}
+  m_PrefabInstance: {fileID: 357406412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &357320212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119000, guid: 907fd825e3988774caab4234b943bf44,
+    type: 3}
+  m_PrefabInstance: {fileID: 357406412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &357406412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1706,6 +1718,10 @@ PrefabInstance:
     - target: {fileID: 119000, guid: 907fd825e3988774caab4234b943bf44, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 119000, guid: 907fd825e3988774caab4234b943bf44, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 439102, guid: 907fd825e3988774caab4234b943bf44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1882,7 +1898,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.45000005, z: 0.0047912598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1899929788}
+  m_Father: {fileID: 357246450}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514343236
@@ -2038,11 +2054,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100166, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
       propertyPath: m_Name
-      value: TT_demo_police
+      value: MainPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 100192, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 100166, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2086,6 +2102,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100192, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3300212, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
@@ -4573,6 +4593,8 @@ GameObject:
   - component: {fileID: 1527320494}
   - component: {fileID: 1527320493}
   - component: {fileID: 1527320495}
+  - component: {fileID: 1527320497}
+  - component: {fileID: 1527320496}
   m_Layer: 0
   m_Name: TransformPoint
   m_TagString: Untagged
@@ -4588,7 +4610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527320491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 60512370}
@@ -4657,6 +4679,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!195 &1527320496
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527320491}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 12
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1527320497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527320491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af06e57c30dddd648aa33516938c35c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkRate: 0.01
 --- !u!1 &1592574197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,19 +5796,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893067263}
   m_CullTransparentMesh: 0
---- !u!1 &1899929786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 119000, guid: 907fd825e3988774caab4234b943bf44,
-    type: 3}
-  m_PrefabInstance: {fileID: 357406412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1899929787
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899929786}
+  m_GameObject: {fileID: 357320212}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -5761,19 +5812,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &1899929788 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 439102, guid: 907fd825e3988774caab4234b943bf44,
-    type: 3}
-  m_PrefabInstance: {fileID: 357406412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1899929791
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899929786}
+  m_GameObject: {fileID: 357320212}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
