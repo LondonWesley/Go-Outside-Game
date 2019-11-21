@@ -7,10 +7,14 @@ public class player : MonoBehaviour
 {
     public float Speed;
     public double stamina = 100;
+    public double health = 100;
     public double recover_rate = 0.2;
     public Slider stamina_bar;
+    public Slider health_bar;
+    public GameObject corpse;
     Animator m_Animator;
     public GameObject self;
+    public GameObject body;
 
 
 
@@ -18,11 +22,13 @@ public class player : MonoBehaviour
     void Update()
     {
         stamina_bar.value = (int)(stamina);
+        health_bar.value = (int)(health);
         playermovement();
         if (Input.GetKey(KeyCode.LeftShift) && stamina>=1)
         {
             Speed = 20;
             stamina -= 0.3;
+           
             //Debug.Log(stamina);
 
         } else {
@@ -36,8 +42,19 @@ public class player : MonoBehaviour
         {
             self.transform.position = new Vector3(48 ,20,227);
         }
-    }
 
+        if (health < 1)
+        {
+            player p = self.GetComponent<player>();
+            corpse.transform.position = self.transform.position;
+            corpse.SetActive(true);
+            Rigidbody rigid = self.GetComponent<Rigidbody>();
+            Destroy(rigid);
+            Destroy(body);
+            Destroy(p);
+        }
+    }
+  
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -53,6 +70,6 @@ public class player : MonoBehaviour
 
         Vector3 playerMovement = new Vector3(hor, 0f, ver) * Speed * Time.deltaTime;
         transform.Translate(playerMovement, Space.Self);
-
+        
     }
 }

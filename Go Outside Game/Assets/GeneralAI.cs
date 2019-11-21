@@ -26,7 +26,7 @@ public class GeneralAI : MonoBehaviour
         }
         navMesh = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
-
+   
     // Update is called once per frame
     void Update()
     {

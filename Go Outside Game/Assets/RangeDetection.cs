@@ -22,7 +22,7 @@ public class RangeDetection : MonoBehaviour
             if (!objectsInRange.Contains(collision.gameObject))
             {
                 objectsInRange.Add(collision.gameObject);
-                Debug.Log("object:" + collision.gameObject.name);
+                //Debug.Log("object:" + collision.gameObject.name);
             }
         }
     }
@@ -35,6 +35,7 @@ public class RangeDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("clearing");
+
+      //  Debug.Log("clearing");
     }
 }

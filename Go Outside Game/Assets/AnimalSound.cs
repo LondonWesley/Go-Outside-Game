@@ -48,6 +48,7 @@ public class AnimalSound : MonoBehaviour
 
     public void findRangeForSound()
     {
+        bool playerFound = false;
         GameObject closestObject = null;
         List<GameObject> targets = detector.getNearByObjects();
         if(targets.Count > 0)
@@ -58,12 +59,19 @@ public class AnimalSound : MonoBehaviour
             {
                 if(current.tag == "Player")
                 {
+                    playerFound = true;
                     source.pitch = Random.Range(lowPitchRange, highPitchRange);
                     float Vol = Vector3.Distance(current.transform.position, this.transform.position) * distToVol;
-                    //source.PlayOneShot(Behemoth_Growl_Low_Groam_01, Vol);
-                    source.Play();
+                    source.PlayOneShot(Behemoth_Growl_Low_Groam_01, Vol);
+                    //source.Play();
                 }
             }
+        } else {
+            playerFound = false;
+        }
+        if(playerFound == false)
+        {
+            source.Stop();
         }
     }
 }
