@@ -6600,6 +6600,7 @@ GameObject:
   - component: {fileID: 2115816611}
   - component: {fileID: 2115816610}
   - component: {fileID: 2115816612}
+  - component: {fileID: 2115816613}
   m_Layer: 0
   m_Name: GenericAnimal
   m_TagString: Animal
@@ -6646,7 +6647,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0020d02a1d245384c994a0ccdd509145, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f8bf7faf0377a5a43bfd8c747d0cf9aa, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6732,6 +6733,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2115816613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115816609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877e4bd0bdf3b4cac9f98ba683a74834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Behemoth_Growl_Low_Groam_01: {fileID: 8300000, guid: bdb96c6784228054698f34a917c4e6fa,
+    type: 3}
 --- !u!1 &2125759079
 GameObject:
   m_ObjectHideFlags: 0
