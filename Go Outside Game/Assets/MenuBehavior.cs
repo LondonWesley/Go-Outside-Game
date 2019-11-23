@@ -9,6 +9,7 @@ public class MenuBehavior : MonoBehaviour
     public bool isStart;
     public bool isQuit;
     public bool isCredits;
+    public bool BackToMain;
     public Button interaction;
 
     // Start is called before the first frame update
@@ -21,15 +22,21 @@ public class MenuBehavior : MonoBehaviour
     // Update is called once per frame
     void ClickedAction()
     {
-        if(isStart == true)
+        if (isStart == true)
         {
             SceneManager.LoadScene(1);
-        } else if(isQuit == true)
+        }
+        else if (isQuit == true)
         {
             Application.Quit();
-        } else if(isCredits == true)
+        }
+        else if (isCredits == true)
         {
-            
+            SceneManager.LoadScene(2);
+        }
+        else if(BackToMain == true)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
