@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class player : MonoBehaviour
             corpse.transform.position = self.transform.position;
             corpse.SetActive(true);
             Rigidbody rigid = self.GetComponent<Rigidbody>();
+            self.AddComponent(typeof(ExitScreen));
             Destroy(rigid);
             Destroy(body);
             Destroy(p);
@@ -70,6 +72,11 @@ public class player : MonoBehaviour
 
         Vector3 playerMovement = new Vector3(hor, 0f, ver) * Speed * Time.deltaTime;
         transform.Translate(playerMovement, Space.Self);
+        
+    }
+
+    void DeadTime()
+    {
         
     }
 }
