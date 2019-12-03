@@ -8,6 +8,7 @@ public class ToLiveOrDie : MonoBehaviour
 {
     public bool MarchOn;
     public bool Return;
+    public bool Victory;
     public Button choice;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class ToLiveOrDie : MonoBehaviour
         if(MarchOn == true)
         {
             SceneManager.LoadScene(1);
-        } else if(Return == true)
+        } else if(Return == true || Victory == true)
         {
             SceneManager.LoadScene(0);
         }
