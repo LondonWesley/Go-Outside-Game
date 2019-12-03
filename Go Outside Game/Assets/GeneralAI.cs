@@ -10,7 +10,7 @@ public class GeneralAI : MonoBehaviour
     RangeDetection detector;
     UnityEngine.AI.NavMeshAgent navMesh;
     public float checkRate = 1f;
-    int maxSpeed = 12;
+    int maxSpeed = 9;
     //modes : 0 is neutral 1 is flee, 2 is attack
     public int mode = 0;
     float nextCheck;
@@ -45,6 +45,15 @@ public class GeneralAI : MonoBehaviour
                 attack();   
             }
             nextCheck = Time.time + checkRate;
+        }
+        GameObject body = transform.parent.gameObject;
+       // Debug.Log(Vector3.Distance(transform.position, playerTransform.position));
+        if (Vector3.Distance(transform.position, playerTransform.position) > 100)
+        {
+         
+            body.transform.position = new Vector3(0,0,0);
+            transform.position = playerTransform.position + new Vector3(Random.Range(-100, 100), 1, Random.Range(-100, 100));
+            //  gameObject.transform.Translate(new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)));
         }
     }
 

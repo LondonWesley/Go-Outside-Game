@@ -14,7 +14,7 @@ public class PhoneScript : MonoBehaviour
     public int currentTask = 0;
     // Update is called once per frame
 
-    public void addTask(int timeLimit)
+    public void addTask(int timeLimit, string desc)
     {
         if(taskCount < 9)
         {
@@ -23,7 +23,7 @@ public class PhoneScript : MonoBehaviour
            //Component[] tester = task.GetComponents(typeof(Component)); // this lets you see the name of the kinds of components inside
            // for (int i = 0; i < tester.Length; i++)
            //     Debug.Log(tester[i]);
-            task.GetComponent<TextMeshProUGUI>().SetText(timeLimit.ToString());
+            task.GetComponent<TextMeshProUGUI>().SetText(desc);
             taskCount++;
 
         }
@@ -41,13 +41,8 @@ public class PhoneScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)){
-            addTask(20);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            removeTask(20);
-        }
+        
+      
             if (Input.GetKeyDown(KeyCode.Q))
         {
             if (phoneIsUp)
