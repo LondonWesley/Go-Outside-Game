@@ -12,12 +12,20 @@ public class PhoneScript : MonoBehaviour
     public int[] time;
     public int taskCount = 0;
     public int currentTask = 0;
+    public RandomTasks taks;
+    public GameObject warning;
     // Update is called once per frame
+    bool started;
 
+    void Start()
+    {
+        started = false;  
+    }
     public void addTask(int timeLimit, string desc)
     {
         if(taskCount < 9)
         {
+            started = true;
             GameObject task = listOfTasks[taskCount];
             task.transform.parent.gameObject.SetActive(true);
            //Component[] tester = task.GetComponents(typeof(Component)); // this lets you see the name of the kinds of components inside
@@ -38,6 +46,7 @@ public class PhoneScript : MonoBehaviour
             task.transform.parent.gameObject.SetActive(false);
             
         } 
+       
     }
     void Update()
     {
@@ -53,6 +62,12 @@ public class PhoneScript : MonoBehaviour
                 IphoneUI.SetActive(true);
                 phoneIsUp = true;
             }     
+        }
+        if (taskCount == 0 && started == true)
+        {
+            taks.difficulty = 5;
+            warning.SetActive(true);
+
         }
     }
 }

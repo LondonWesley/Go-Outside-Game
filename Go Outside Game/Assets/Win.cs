@@ -7,6 +7,7 @@ public class Win : MonoBehaviour
 {
     // Start is called before the first frame update
    public GameObject cam;
+    public PhoneScript phone;
     float speed = 2f;
     bool driving = false;
     void Start()
@@ -17,8 +18,9 @@ public class Win : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && phone.taskCount == 0)
         {
+         
             Destroy(collision.gameObject);
             cam.SetActive(true);
             StartCoroutine("driveaway");
@@ -39,6 +41,10 @@ public class Win : MonoBehaviour
         {
             speed +=0.01f;
             transform.Translate(transform.forward + new Vector3(0, 0, speed * Time.deltaTime));
+            if (speed > 5.5)
+            {
+                SceneManager.LoadScene(4);
+            }
             //transform.Rotate(Vector3(0,0,0),transform);
         }
     }

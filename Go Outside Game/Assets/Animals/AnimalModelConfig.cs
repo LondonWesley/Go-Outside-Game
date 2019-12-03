@@ -7,9 +7,12 @@ public class AnimalModelConfig : MonoBehaviour
     // Start is called before the first frame update
     public GameObject animalModel;
     public GameObject MeshLoader;
+    public Transform playTran;
     void Start()
     {
+        MeshLoader = GameObject.FindGameObjectWithTag("meshload");
         animalModel.AddComponent<BoxCollider>();
+        playTran = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void animalShuffle()
@@ -40,6 +43,11 @@ public class AnimalModelConfig : MonoBehaviour
         {
             animalShuffle();
             //Debug.Log("SHUFFLING.");
+        }
+        if (Vector3.Distance(transform.position, playTran.position) > 100)
+        {
+
+            Destroy(gameObject);
         }
     }
 }

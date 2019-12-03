@@ -1008,19 +1008,22 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Instructions:
 
-    W- Forward
+    W,A,S,D /mouse- Movement
 
-    A- Left
+    Q- Phone (This will list out what you need to
 
-    S- Right
-
-    D- Backward
+    escape!)
 
     Shift- Run (Watch out for Stamina!)
 
-    Use the mouse to look around!
+    Collect the glowing tools to fix your van and escape
 
-    Don''t let your HP fall or else...'
+    Beware wild creatures will attack you.
+
+    As time goes on, more them will spawn!
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1048,8 +1051,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1065,7 +1068,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 25
+  m_firstOverflowCharacterIndex: 85
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1089,12 +1092,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1327978677}
-    characterCount: 153
+    characterCount: 262
     spriteCount: 0
-    spaceCount: 27
-    wordCount: 28
+    spaceCount: 46
+    wordCount: 48
     linkCount: 0
-    lineCount: 8
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -24,16 +24,18 @@ public class player : MonoBehaviour
     {
         stamina_bar.value = (int)(stamina);
         health_bar.value = (int)(health);
+        if (health < 100)
+            health += 0.06;
         playermovement();
         if (Input.GetKey(KeyCode.LeftShift) && stamina>=1)
         {
-            Speed = 20;
+            Speed = 18;
             stamina -= 0.3;
            
             //Debug.Log(stamina);
 
         } else {
-            Speed = 5;
+            Speed = 8;
            // Debug.Log(stamina);
             if (stamina< 100)
                 stamina += recover_rate;

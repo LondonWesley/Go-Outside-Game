@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ExitScreen : MonoBehaviour
 {
     // Start is called before the first frame update
-    double timer = 500;
+    double timer = 200;
 
     // Update is called once per frame
     void Update()

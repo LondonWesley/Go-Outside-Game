@@ -10,10 +10,11 @@ public class RandomTasks : MonoBehaviour
     public Vector3 spawnValues;     //Vector that hold the values of the range of where spawning Tasks will take place
     public float spawnWait;         //These three variables are the time between each spawn (Range between leastWait to MostWait)
     public float spawnMostWait;
-    public int difficulty = 0;
+    public int difficulty = 30;
     public GameObject[] animals;
     public float spawnLeastWait;
     public GameObject phone;
+    public Transform playerTransform;
     string[] todo =
     {
         "Car Tire", "Car Battery", "Engine Part", "Gas", "Steering Wheels", "Wrench", "Fuse", "Light Bulb", "Screw Driver", "Socket Wrench", 
@@ -26,13 +27,37 @@ public class RandomTasks : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(waitTask());
+        difficulty = 25;
+        if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+            StartCoroutine(waitTask());
         StartCoroutine(incDifficulty());
+        StartCoroutine(mobSpawn());
     }
 
+    IEnumerator mobSpawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.3f);
+
+            if (Random.Range(1, difficulty) < 5)
+            {
+                
+                int rand = Random.Range(-50, 50);
+                Debug.Log("A monster at " + rand);
+                if (Mathf.Abs(rand)>10)
+                    Instantiate(animal, (new Vector3(rand, 1, rand)) + playerTransform.position, Quaternion.Euler(new Vector3(0f, 9, 0f)));
+            }
+        }
+    }
     void Update()
     {
-        spawnWait = Random.Range(spawnLeastWait, spawnMostWait);
+        
+
+       
         
     }
 
@@ -51,19 +76,22 @@ public class RandomTasks : MonoBehaviour
            
           
          
-            yield return new WaitForSeconds(0.01f);
+            //yield return new WaitForSeconds(0.01f);
             taskCounter++;
         }
     }
     IEnumerator incDifficulty()
     {
-       
         
-        while (difficulty < animals.Length)
+       
+        while (difficulty > 2)
         {
-            yield return new WaitForSeconds(0.1f);
-            animals[difficulty].SetActive(true);
-            difficulty++;
+           
+            difficulty-=1;
+            Debug.Log("Difficulty increase");
+            yield return new WaitForSeconds(10);
+
+
         }
 
     }

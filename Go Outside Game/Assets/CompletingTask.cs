@@ -9,9 +9,13 @@ public class CompletingTask : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SetActive(false);
-        phone = GameObject.Find("Canvas");
-        PhoneScript phonescript = phone.GetComponent<PhoneScript>();
-        phonescript.removeTask(indexOrder);
+        if (other.gameObject.tag == "Player")
+        {
+            
+            phone = GameObject.Find("Canvas");
+            PhoneScript phonescript = phone.GetComponent<PhoneScript>();
+            phonescript.removeTask(indexOrder);
+            this.gameObject.SetActive(false);
+        }
     }
 }

@@ -20,7 +20,7 @@ public class GeneralAI : MonoBehaviour
         mode = 1;
         detector = this.transform.Find("DetectRange").GetComponent<RangeDetection>();
         if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-        {
+        {                       
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             targetTransform = playerTransform;
         }
@@ -46,15 +46,10 @@ public class GeneralAI : MonoBehaviour
             }
             nextCheck = Time.time + checkRate;
         }
-        GameObject body = transform.parent.gameObject;
-       // Debug.Log(Vector3.Distance(transform.position, playerTransform.position));
-        if (Vector3.Distance(transform.position, playerTransform.position) > 100)
-        {
-         
-            body.transform.position = new Vector3(0,0,0);
-            transform.position = playerTransform.position + new Vector3(Random.Range(-100, 100), 1, Random.Range(-100, 100));
-            //  gameObject.transform.Translate(new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)));
-        }
+        //GameObject body = transform.parent.gameObject;
+        // Debug.Log(Vector3.Distance(transform.position, playerTransform.position));
+
+       
     }
 
     public void attack()
